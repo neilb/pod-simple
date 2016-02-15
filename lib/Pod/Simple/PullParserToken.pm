@@ -5,6 +5,7 @@ package Pod::Simple::PullParserToken;
 @ISA = ();
 $VERSION = '3.33';
 use strict;
+use warnings;
 
 sub new {  # Class->new('type', stuff...);  ## Overridden in derived classes anyway
   my $class = shift;

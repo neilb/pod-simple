@@ -7,6 +7,7 @@ package Pod::Simple::RTF;
 #sub Pod::Simple::PullParser::DEBUG () {4};
 
 use strict;
+use warnings;
 use vars qw($VERSION @ISA %Escape $WRAP %Tagmap);
 $VERSION = '3.33';
 use Pod::Simple::PullParser ();
@@ -540,6 +541,8 @@ sub rtf_esc_codely {
     return $x;
   }
 }
+
+no warnings 'once';
 
 %Escape = (
   (($] lt 5.007_003) # Broken for non-ASCII on early Perls

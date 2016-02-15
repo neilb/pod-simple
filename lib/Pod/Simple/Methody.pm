@@ -2,6 +2,7 @@
 require 5;
 package Pod::Simple::Methody;
 use strict;
+use warnings;
 use Pod::Simple ();
 use vars qw(@ISA $VERSION);
 $VERSION = '3.33';

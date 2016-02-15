@@ -1,7 +1,8 @@
  # ChangeLog for Pod::Simple dist
 #---------------------------------------------------------------------------
 	* Release 3.33
-	No changes since 3.32.
+	Added "use warnings" in every module. Added a few "no warnings 'once'"
+    and "no warnings 'redefine'" to deal with some specific warnings.
 
 2015-11-02   Marc Green <marcgreen@cpan.org>
 	* Release 3.32

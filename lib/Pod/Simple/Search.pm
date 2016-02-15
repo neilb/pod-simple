@@ -1,6 +1,7 @@
 require 5.005;
 package Pod::Simple::Search;
 use strict;
+use warnings;
 
 use vars qw($VERSION $MAX_VERSION_WITHIN $SLEEPY);
 $VERSION = '3.33';   ## Current version of this package

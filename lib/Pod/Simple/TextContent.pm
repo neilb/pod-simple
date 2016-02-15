@@ -3,6 +3,7 @@
 require 5;
 package Pod::Simple::TextContent;
 use strict;
+use warnings;
 use Carp ();
 use Pod::Simple ();
 use vars qw( @ISA $VERSION );
@@ -25,6 +26,7 @@ sub _handle_element_start {
 }
 
 sub _handle_text {
+  no warnings 'once';
   $_[1] =~ s/$Pod::Simple::shy//g;
   $_[1] =~ s/$Pod::Simple::nbsp/ /g;
   print {$_[0]{'output_fh'}} $_[1];

@@ -2,6 +2,7 @@
 require 5;
 package Pod::Simple;
 use strict;
+use warnings;
 use Carp ();
 BEGIN           { *DEBUG = sub () {0} unless defined &DEBUG }
 use integer;
@@ -123,6 +124,8 @@ __PACKAGE__->_accessorize(
  'parse_empty_lists', # whether to acknowledge empty =over/=back blocks
  'raw_mode',          # to report entire raw lines instead of Pod elements
 );
+
+no warnings 'redefine';
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

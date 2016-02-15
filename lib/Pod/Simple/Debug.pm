@@ -1,6 +1,7 @@
 require 5;
 package Pod::Simple::Debug;
 use strict;
+use warnings;
 use vars qw($VERSION );
 $VERSION = '3.33';
 

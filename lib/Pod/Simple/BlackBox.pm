@@ -20,6 +20,7 @@ package Pod::Simple::BlackBox;
 
 use integer; # vroom!
 use strict;
+use warnings;
 use Carp ();
 use vars qw($VERSION );
 $VERSION = '3.33';
@@ -44,6 +45,8 @@ if (($] ge 5.007_003)) {
 }
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+no warnings 'redefine';
 
 sub parse_line { shift->parse_lines(@_) } # alias
 

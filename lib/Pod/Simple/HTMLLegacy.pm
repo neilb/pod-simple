@@ -2,6 +2,7 @@
 require 5;
 package Pod::Simple::HTMLLegacy;
 use strict;
+use warnings;
 
 use vars qw($VERSION);
 use Getopt::Long;
@@ -49,6 +50,7 @@ sub pod2html {
       map defined($_) ? $_ : "(nil)",
        $verbose,     $index,     $infile,     $outfile,     $title,
     ;
+    no warnings 'once';
     *Pod::Simple::HTML::DEBUG = sub(){1};
   }
   require Pod::Simple::HTML;

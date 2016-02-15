@@ -6,6 +6,7 @@ use vars qw($VERSION );
 $VERSION = '3.33';
 
 use strict;
+use warnings;
 use Pod::Simple::BlackBox;
 use vars qw($VERSION );
 $VERSION = '3.33';
@@ -17,6 +18,8 @@ use overload( # So it'll stringify nice
   
   'fallback' => 1,         # turn on cleverness
 );
+
+no warnings 'redefine';
 
 sub tack_on {
   $_[0] = ['', {}, "$_[0]" ];

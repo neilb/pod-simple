@@ -6,6 +6,7 @@ use 5.008;
 
 package Pod::Simple::TranscodeSmart;
 use strict;
+use warnings;
 use Pod::Simple;
 require Encode;
 use vars qw($VERSION );

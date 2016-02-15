@@ -3,6 +3,7 @@ require 5;
 package Pod::Simple::PullParserStartToken;
 use Pod::Simple::PullParserToken ();
 use strict;
+use warnings;
 use vars qw(@ISA $VERSION);
 @ISA = ('Pod::Simple::PullParserToken');
 $VERSION = '3.33';

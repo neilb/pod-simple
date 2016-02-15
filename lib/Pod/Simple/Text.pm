@@ -2,6 +2,7 @@
 require 5;
 package Pod::Simple::Text;
 use strict;
+use warnings;
 use Carp ();
 use Pod::Simple::Methody ();
 use Pod::Simple ();

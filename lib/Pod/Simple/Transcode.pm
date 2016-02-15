@@ -2,6 +2,7 @@
 require 5;
 package Pod::Simple::Transcode;
 use strict;
+use warnings;
 use vars qw($VERSION @ISA);
 $VERSION = '3.33';
 

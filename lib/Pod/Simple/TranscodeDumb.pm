@@ -4,6 +4,7 @@ require 5;
 
 package Pod::Simple::TranscodeDumb;
 use strict;
+use warnings;
 use vars qw($VERSION %Supported);
 $VERSION = '3.33';
 # This module basically pretends it knows how to transcode, except

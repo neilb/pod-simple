@@ -1,5 +1,6 @@
 
 use strict;
+use warnings;
 package Pod::Simple::TiedOutFH;
 use Symbol ('gensym');
 use Carp ();

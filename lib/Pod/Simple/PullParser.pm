@@ -5,6 +5,7 @@ use Pod::Simple ();
 BEGIN {@ISA = ('Pod::Simple')}
 
 use strict;
+use warnings;
 use Carp ();
 
 use Pod::Simple::PullParserStartToken;
