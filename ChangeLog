@@ -13,6 +13,8 @@
     Pod::Simple::TranscodeSmart, it loads Pod::Simple::TranscodeDumb
     (which explains the passes on 5.6.2).
 
+    Added MIN_PERL_VERSION to Makefile.PL, set to 5.006
+
     Dropped all use of "use vars", and declared all relevant package
     variables with 'our'.
 

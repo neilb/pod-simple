@@ -11,6 +11,12 @@ require 5;
 use strict;
 use ExtUtils::MakeMaker;
 
+my $mm_ver = $ExtUtils::MakeMaker::VERSION;
+if ($mm_ver =~ /_/) {
+    $mm_ver = eval $mm_ver;
+    die $@ if $@;
+}
+
 WriteMakefile(
   NAME		=> 'Pod::Simple',
   VERSION_FROM	=> 'lib/Pod/Simple.pm',
@@ -28,6 +34,11 @@ WriteMakefile(
     integer File::Find Test::More
    ]
   },
+
+  ($mm_ver >= 6.48
+     ? (MIN_PERL_VERSION => 5.006)
+     : ()
+  ),
 
   INSTALLDIRS => $] >= 5.009003 && $] <= 5.011000 ? 'perl' : 'site',
 
