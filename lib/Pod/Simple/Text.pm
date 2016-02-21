@@ -1,14 +1,16 @@
-
-require 5;
 package Pod::Simple::Text;
+
+require 5.006;
 use strict;
 use warnings;
 use Carp ();
 use Pod::Simple::Methody ();
 use Pod::Simple ();
-use vars qw( @ISA $VERSION $FREAKYMODE);
-$VERSION = '3.33';
-@ISA = ('Pod::Simple::Methody');
+
+our $VERSION = '3.33';
+our @ISA     = ('Pod::Simple::Methody');
+our $FREAKYMODE;
+
 BEGIN { *DEBUG = defined(&Pod::Simple::DEBUG)
           ? \&Pod::Simple::DEBUG
           : sub() {0}

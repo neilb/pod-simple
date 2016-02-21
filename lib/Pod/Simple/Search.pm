@@ -1,18 +1,18 @@
-require 5.005;
 package Pod::Simple::Search;
+
+require 5.006;
 use strict;
 use warnings;
-
-use vars qw($VERSION $MAX_VERSION_WITHIN $SLEEPY);
-$VERSION = '3.33';   ## Current version of this package
-
-BEGIN { *DEBUG = sub () {0} unless defined &DEBUG; }   # set DEBUG level
 use Carp ();
 
-$SLEEPY = 1 if !defined $SLEEPY and $^O =~ /mswin|mac/i;
+our $VERSION = '3.33';
+
+BEGIN { *DEBUG = sub () {0} unless defined &DEBUG; }   # set DEBUG level
+
+our $SLEEPY = 1 if !defined $SLEEPY and $^O =~ /mswin|mac/i;
   # flag to occasionally sleep for $SLEEPY - 1 seconds.
 
-$MAX_VERSION_WITHIN ||= 60;
+our $MAX_VERSION_WITHIN ||= 60;
 my $IS_CASE_INSENSITIVE = -e uc __FILE__ && -e lc __FILE__;
 
 #############################################################################

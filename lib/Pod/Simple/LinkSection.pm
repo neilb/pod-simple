@@ -1,15 +1,12 @@
-
-require 5;
 package Pod::Simple::LinkSection;
-  # Based somewhat dimly on Array::Autojoin
-use vars qw($VERSION );
-$VERSION = '3.33';
 
+require 5.006;
 use strict;
 use warnings;
 use Pod::Simple::BlackBox;
-use vars qw($VERSION );
-$VERSION = '3.33';
+  # Based somewhat dimly on Array::Autojoin
+
+our $VERSION = '3.33';
 
 use overload( # So it'll stringify nice
   '""'   => \&Pod::Simple::BlackBox::stringify_lol,

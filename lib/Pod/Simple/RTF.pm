@@ -1,22 +1,22 @@
-
-require 5;
 package Pod::Simple::RTF;
+
+require 5.006;
+use strict;
+use warnings;
+use Pod::Simple::PullParser ();
 
 #sub DEBUG () {4};
 #sub Pod::Simple::DEBUG () {4};
 #sub Pod::Simple::PullParser::DEBUG () {4};
 
-use strict;
-use warnings;
-use vars qw($VERSION @ISA %Escape $WRAP %Tagmap);
-$VERSION = '3.33';
-use Pod::Simple::PullParser ();
-BEGIN {@ISA = ('Pod::Simple::PullParser')}
+our $VERSION = '3.33';
+our @ISA     = ('Pod::Simple::PullParser');
+our %Escape;
 
 use Carp ();
 BEGIN { *DEBUG = \&Pod::Simple::DEBUG unless defined &DEBUG }
 
-$WRAP = 1 unless defined $WRAP;
+our $WRAP = 1 unless defined $WRAP;
 
 # These are broken for early Perls on EBCDIC; they could be fixed to work
 # better there, but not worth it.  These are part of a larger [...] class, so
@@ -39,7 +39,7 @@ sub _openclose {
 
 my @_to_accept;
 
-%Tagmap = (
+our %Tagmap = (
  # 'foo=bar' means ('foo' => '{\bar'."\n", '/foo' => '}')
  _openclose(
   'B=cs18\b',

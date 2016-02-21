@@ -1,9 +1,10 @@
-
-require 5;
 package Pod::Simple::Progress;
-$VERSION = '3.33';
+
+require 5.006;
 use strict;
 use warnings;
+
+our $VERSION = '3.33';
 
 # Objects of this class are used for noting progress of an
 #  operation every so often.  Messages delivered more often than that

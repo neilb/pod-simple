@@ -1,14 +1,13 @@
-
-
-require 5;
 package Pod::Simple::TextContent;
+
+require 5.006;
 use strict;
 use warnings;
 use Carp ();
 use Pod::Simple ();
-use vars qw( @ISA $VERSION );
-$VERSION = '3.33';
-@ISA = ('Pod::Simple');
+
+our $VERSION = '3.33';
+our @ISA     = ('Pod::Simple');
 
 sub new {
   my $self = shift;

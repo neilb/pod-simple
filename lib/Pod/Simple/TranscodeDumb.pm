@@ -1,17 +1,16 @@
-
-require 5;
+package Pod::Simple::TranscodeDumb;
 ## This module is to be use()'d only by Pod::Simple::Transcode
 
-package Pod::Simple::TranscodeDumb;
+require 5.006;
 use strict;
 use warnings;
-use vars qw($VERSION %Supported);
-$VERSION = '3.33';
+
+our $VERSION = '3.33';
 # This module basically pretends it knows how to transcode, except
 #  only for null-transcodings!  We use this when Encode isn't
 #  available.
 
-%Supported = (
+our %Supported = (
   'ascii'       => 1,
   'ascii-ctrl'  => 1,
   'iso-8859-1'  => 1,

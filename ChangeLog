@@ -4,6 +4,18 @@
 	Added "use warnings" in every module. Added a few "no warnings 'once'"
     and "no warnings 'redefine'" to deal with some specific warnings.
 
+    Added "require 5.006" to all modules apart from
+    Pod::Simple::TranscodeSmart.  Most modules were requiring '5',
+    but based on syntax the min perl version was 5.5.3, and there are
+    CPAN Testers passes for 5.6.2.
+    Pod::Simple::TranscodeSmart requires 5.008, but it's only used by
+    Pod::Simple::Transcode, and if the latter can't load
+    Pod::Simple::TranscodeSmart, it loads Pod::Simple::TranscodeDumb
+    (which explains the passes on 5.6.2).
+
+    Dropped all use of "use vars", and declared all relevant package
+    variables with 'our'.
+
 2015-11-02   Marc Green <marcgreen@cpan.org>
 	* Release 3.32
 	Fixed failing tests on Windows. Thanks to A. Sinan Unur for the

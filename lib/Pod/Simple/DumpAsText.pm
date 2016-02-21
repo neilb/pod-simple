@@ -1,14 +1,14 @@
-
-require 5;
 package Pod::Simple::DumpAsText;
-$VERSION = '3.33';
-use Pod::Simple ();
-BEGIN {@ISA = ('Pod::Simple')}
 
+require 5.006;
 use strict;
 use warnings;
-
 use Carp ();
+use Pod::Simple ();
+
+our $VERSION = '3.33';
+our @ISA     = ('Pod::Simple');
+
 
 BEGIN { *DEBUG = \&Pod::Simple::DEBUG unless defined &DEBUG }
 

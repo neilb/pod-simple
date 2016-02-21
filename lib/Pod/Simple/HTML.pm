@@ -1,47 +1,44 @@
-require 5;
 package Pod::Simple::HTML;
+
+require 5.006;
 use strict;
 use warnings;
 use Pod::Simple::PullParser ();
-use vars qw(
-  @ISA %Tagmap $Computerese $LamePad $Linearization_Limit $VERSION
-  $Perldoc_URL_Prefix $Perldoc_URL_Postfix $Man_URL_Prefix $Man_URL_Postfix
-  $Title_Prefix $Title_Postfix $HTML_EXTENSION %ToIndex
-  $Doctype_decl  $Content_decl
-);
-@ISA = ('Pod::Simple::PullParser');
-$VERSION = '3.33';
+
+our @ISA     = ('Pod::Simple::PullParser');
+our $VERSION = '3.33';
+
 BEGIN {
   if(defined &DEBUG) { } # no-op
   elsif( defined &Pod::Simple::DEBUG ) { *DEBUG = \&Pod::Simple::DEBUG }
   else { *DEBUG = sub () {0}; }
 }
 
-$Doctype_decl ||= '';  # No.  Just No.  Don't even ask me for it.
+our $Doctype_decl ||= '';  # No.  Just No.  Don't even ask me for it.
  # qq{<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
  #    "http://www.w3.org/TR/html4/loose.dtd">\n};
 
-$Content_decl ||=
+our $Content_decl ||=
  q{<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" >};
 
-$HTML_EXTENSION = '.html' unless defined $HTML_EXTENSION;
-$Computerese =  "" unless defined $Computerese;
-$LamePad = '' unless defined $LamePad;
+our $HTML_EXTENSION = '.html' unless defined $HTML_EXTENSION;
+our $Computerese =  "" unless defined $Computerese;
+our $LamePad = '' unless defined $LamePad;
 
-$Linearization_Limit = 120 unless defined $Linearization_Limit;
+our $Linearization_Limit = 120 unless defined $Linearization_Limit;
  # headings/items longer than that won't get an <a name="...">
-$Perldoc_URL_Prefix  = 'http://search.cpan.org/perldoc?'
+our $Perldoc_URL_Prefix  = 'http://search.cpan.org/perldoc?'
  unless defined $Perldoc_URL_Prefix;
-$Perldoc_URL_Postfix = ''
+our $Perldoc_URL_Postfix = ''
  unless defined $Perldoc_URL_Postfix;
 
 
-$Man_URL_Prefix  = 'http://man.he.net/man';
-$Man_URL_Postfix = '';
+our $Man_URL_Prefix  = 'http://man.he.net/man';
+our $Man_URL_Postfix = '';
 
-$Title_Prefix  = '' unless defined $Title_Prefix;
-$Title_Postfix = '' unless defined $Title_Postfix;
-%ToIndex = map {; $_ => 1 } qw(head1 head2 head3 head4 ); # item-text
+our $Title_Prefix  = '' unless defined $Title_Prefix;
+our $Title_Postfix = '' unless defined $Title_Postfix;
+our %ToIndex = map {; $_ => 1 } qw(head1 head2 head3 head4 ); # item-text
   # 'item-text' stuff in the index doesn't quite work, and may
   # not be a good idea anyhow.
 
@@ -90,7 +87,7 @@ __PACKAGE__->_accessorize(
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 my @_to_accept;
 
-%Tagmap = (
+our %Tagmap = (
   'Verbatim'  => "\n<pre$Computerese>",
   '/Verbatim' => "</pre>\n",
   'VerbatimFormatted'  => "\n<pre$Computerese>",

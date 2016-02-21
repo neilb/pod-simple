@@ -1,14 +1,15 @@
-
-require 5;
 package Pod::Simple::SimpleTree;
+
+require 5.006;
 use strict;
 use warnings;
 use Carp ();
 use Pod::Simple ();
-use vars qw( $ATTR_PAD @ISA $VERSION $SORT_ATTRS);
-$VERSION = '3.33';
+
+our $VERSION = '3.33';
+our @ISA     = ('Pod::Simple');
+
 BEGIN {
-  @ISA = ('Pod::Simple');
   *DEBUG = \&Pod::Simple::DEBUG unless defined &DEBUG;
 }
 

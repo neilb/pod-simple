@@ -1,22 +1,23 @@
-
-require 5;
 package Pod::Simple::HTMLBatch;
+
+require 5.006;
 use strict;
 use warnings;
-use vars qw( $VERSION $HTML_RENDER_CLASS $HTML_EXTENSION
- $CSS $JAVASCRIPT $SLEEPY $SEARCH_CLASS @ISA
-);
-$VERSION = '3.33';
-@ISA = ();  # Yup, we're NOT a subclass of Pod::Simple::HTML!
+use Pod::Simple::HTML ();
+use File::Spec ();
+use Pod::Simple::Search;
+
+our $VERSION = '3.33';
+our @ISA     = ();  # Yup, we're NOT a subclass of Pod::Simple::HTML!
+our $HTML_EXTENSION;
+our $CSS;
+our $JAVASCRIPT;
 
 # TODO: nocontents stylesheets. Strike some of the color variations?
 
-use Pod::Simple::HTML ();
 BEGIN {*esc = \&Pod::Simple::HTML::esc }
-use File::Spec ();
 
-use Pod::Simple::Search;
-$SEARCH_CLASS ||= 'Pod::Simple::Search';
+our $SEARCH_CLASS ||= 'Pod::Simple::Search';
 
 BEGIN {
   if(defined &DEBUG) { } # no-op
@@ -24,10 +25,10 @@ BEGIN {
   else { *DEBUG = sub () {0}; }
 }
 
-$SLEEPY = 1 if !defined $SLEEPY and $^O =~ /mswin|mac/i;
+our $SLEEPY = 1 if !defined $SLEEPY and $^O =~ /mswin|mac/i;
 # flag to occasionally sleep for $SLEEPY - 1 seconds.
 
-$HTML_RENDER_CLASS ||= "Pod::Simple::HTML";
+our $HTML_RENDER_CLASS ||= "Pod::Simple::HTML";
 
 #
 # Methods beginning with "_" are particularly internal and possibly ugly.

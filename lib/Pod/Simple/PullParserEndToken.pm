@@ -1,12 +1,12 @@
-
-require 5;
 package Pod::Simple::PullParserEndToken;
-use Pod::Simple::PullParserToken ();
+
+require 5.006;
 use strict;
 use warnings;
-use vars qw(@ISA $VERSION);
-@ISA = ('Pod::Simple::PullParserToken');
-$VERSION = '3.33';
+use Pod::Simple::PullParserToken ();
+
+our @ISA     = ('Pod::Simple::PullParserToken');
+our $VERSION = '3.33';
 
 sub new {  # Class->new(tagname);
   my $class = shift;

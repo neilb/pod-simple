@@ -1,15 +1,15 @@
-
-require 5;
 package Pod::Simple::DumpAsXML;
-$VERSION = '3.33';
-use Pod::Simple ();
-BEGIN {@ISA = ('Pod::Simple')}
 
+require 5.006;
 use strict;
 use warnings;
-
+use Pod::Simple ();
 use Carp ();
 use Text::Wrap qw(wrap);
+
+our $VERSION = '3.33';
+our @ISA     = ('Pod::Simple');
+
 
 BEGIN { *DEBUG = \&Pod::Simple::DEBUG unless defined &DEBUG }
 

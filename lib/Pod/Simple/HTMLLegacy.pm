@@ -1,13 +1,11 @@
-
-require 5;
 package Pod::Simple::HTMLLegacy;
+
+require 5.006;
 use strict;
 use warnings;
-
-use vars qw($VERSION);
 use Getopt::Long;
 
-$VERSION = "5.01";
+our $VERSION = "5.01";
 
 #--------------------------------------------------------------------------
 # 

@@ -1,10 +1,11 @@
-
-require 5;
 package Pod::Simple::Transcode;
+
+require 5.006;
 use strict;
 use warnings;
-use vars qw($VERSION @ISA);
-$VERSION = '3.33';
+
+our $VERSION = '3.33';
+our @ISA;
 
 BEGIN {
   if(defined &DEBUG) {;} # Okay

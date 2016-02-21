@@ -1,21 +1,22 @@
+package Pod::Simple::Checker;
 
 # A quite dimwitted pod2plaintext that need only know how to format whatever
 # text comes out of Pod::BlackBox's _gen_errata
 
-require 5;
-package Pod::Simple::Checker;
+require 5.006;
 use strict;
 use warnings;
 use Carp ();
 use Pod::Simple::Methody ();
 use Pod::Simple ();
-use vars qw( @ISA $VERSION );
-$VERSION = '3.33';
-@ISA = ('Pod::Simple::Methody');
+
 BEGIN { *DEBUG = defined(&Pod::Simple::DEBUG)
           ? \&Pod::Simple::DEBUG
           : sub() {0}
       }
+
+our $VERSION = '3.33';
+our @ISA     = ('Pod::Simple::Methody');
 
 use Text::Wrap 98.112902 (); # was 2001.0131, but I don't think we need that
 $Text::Wrap::wrap = 'overflow';

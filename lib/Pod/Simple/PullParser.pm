@@ -1,16 +1,16 @@
-require 5;
 package Pod::Simple::PullParser;
-$VERSION = '3.33';
-use Pod::Simple ();
-BEGIN {@ISA = ('Pod::Simple')}
 
+require 5.006;
 use strict;
 use warnings;
 use Carp ();
-
+use Pod::Simple ();
 use Pod::Simple::PullParserStartToken;
 use Pod::Simple::PullParserEndToken;
 use Pod::Simple::PullParserTextToken;
+
+our $VERSION = '3.33';
+our @ISA     = ('Pod::Simple');
 
 BEGIN { *DEBUG = \&Pod::Simple::DEBUG unless defined &DEBUG }
 

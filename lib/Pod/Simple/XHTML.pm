@@ -1,3 +1,43 @@
+package Pod::Simple::XHTML;
+
+require 5.006;
+use strict;
+use warnings;
+use Pod::Simple::Methody ();
+
+our $VERSION = '3.33';
+our @ISA     = ('Pod::Simple::Methody');
+our $HAS_HTML_ENTITIES;
+
+BEGIN {
+  $HAS_HTML_ENTITIES = eval "require HTML::Entities; 1";
+}
+
+my %entities = (
+  q{>} => 'gt',
+  q{<} => 'lt',
+  q{'} => '#39',
+  q{"} => 'quot',
+  q{&} => 'amp',
+);
+
+sub encode_entities {
+  my $self = shift;
+  my $ents = $self->html_encode_chars;
+  return HTML::Entities::encode_entities( $_[0], $ents ) if $HAS_HTML_ENTITIES;
+  if (defined $ents) {
+      $ents =~ s,(?<!\\)([]/]),\\$1,g;
+      $ents =~ s,(?<!\\)\\\z,\\\\,;
+  } else {
+      $ents = join '', keys %entities;
+  }
+  my $str = $_[0];
+  $str =~ s/([$ents])/'&' . ($entities{$1} || sprintf '#x%X', ord $1) . ';'/ge;
+  return $str;
+}
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 =pod
 
 =head1 NAME
@@ -40,44 +80,6 @@ declare the output character set as UTF-8 before parsing, like so:
   $psx->html_charset('UTF-8');
   $psx->html_encode_chars(q{&<>'"});
 
-=cut
-
-package Pod::Simple::XHTML;
-use strict;
-use warnings;
-use vars qw( $VERSION @ISA $HAS_HTML_ENTITIES );
-$VERSION = '3.33';
-use Pod::Simple::Methody ();
-@ISA = ('Pod::Simple::Methody');
-
-BEGIN {
-  $HAS_HTML_ENTITIES = eval "require HTML::Entities; 1";
-}
-
-my %entities = (
-  q{>} => 'gt',
-  q{<} => 'lt',
-  q{'} => '#39',
-  q{"} => 'quot',
-  q{&} => 'amp',
-);
-
-sub encode_entities {
-  my $self = shift;
-  my $ents = $self->html_encode_chars;
-  return HTML::Entities::encode_entities( $_[0], $ents ) if $HAS_HTML_ENTITIES;
-  if (defined $ents) {
-      $ents =~ s,(?<!\\)([]/]),\\$1,g;
-      $ents =~ s,(?<!\\)\\\z,\\\\,;
-  } else {
-      $ents = join '', keys %entities;
-  }
-  my $str = $_[0];
-  $str =~ s/([$ents])/'&' . ($entities{$1} || sprintf '#x%X', ord $1) . ';'/ge;
-  return $str;
-}
-
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 =head1 METHODS
 

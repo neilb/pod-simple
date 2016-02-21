@@ -18,12 +18,14 @@ package Pod::Simple::BlackBox;
 #
 # Every node in a treelet is a ['name', {attrhash}, ...children...]
 
+require 5.006;
 use integer; # vroom!
 use strict;
 use warnings;
 use Carp ();
-use vars qw($VERSION );
-$VERSION = '3.33';
+
+our $VERSION = '3.33';
+
 #use constant DEBUG => 7;
 BEGIN {
   require Pod::Simple;
