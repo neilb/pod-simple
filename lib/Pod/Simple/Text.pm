@@ -7,7 +7,7 @@ use Carp ();
 use Pod::Simple::Methody ();
 use Pod::Simple ();
 
-our $VERSION = '3.33';
+our $VERSION = '3.33_01';
 our @ISA     = ('Pod::Simple::Methody');
 our $FREAKYMODE;
 

@@ -7,7 +7,7 @@ use Pod::Simple::HTML ();
 use File::Spec ();
 use Pod::Simple::Search;
 
-our $VERSION = '3.33';
+our $VERSION = '3.33_01';
 our @ISA     = ();  # Yup, we're NOT a subclass of Pod::Simple::HTML!
 our $HTML_EXTENSION;
 our $CSS;

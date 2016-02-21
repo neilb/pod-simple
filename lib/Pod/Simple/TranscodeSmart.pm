@@ -8,7 +8,7 @@ use warnings;
 use Pod::Simple;
 require Encode;
 
-our $VERSION = '3.33';
+our $VERSION = '3.33_01';
 
 sub is_dumb  {0}
 sub is_smart {1}

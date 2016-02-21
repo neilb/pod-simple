@@ -12,7 +12,7 @@ use Pod::Simple::BlackBox ();
 #use utf8;
 
 our @ISA = ('Pod::Simple::BlackBox');
-our $VERSION = '3.33';
+our $VERSION = '3.33_01';
 
 our @Known_formatting_codes = qw(I B C L E F S X Z); 
 our %Known_formatting_codes = map(($_=>1), @Known_formatting_codes);

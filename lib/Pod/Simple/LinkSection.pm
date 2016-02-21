@@ -6,7 +6,7 @@ use warnings;
 use Pod::Simple::BlackBox;
   # Based somewhat dimly on Array::Autojoin
 
-our $VERSION = '3.33';
+our $VERSION = '3.33_01';
 
 use overload( # So it'll stringify nice
   '""'   => \&Pod::Simple::BlackBox::stringify_lol,
