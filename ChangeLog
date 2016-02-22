@@ -1,5 +1,12 @@
  # ChangeLog for Pod::Simple dist
 #---------------------------------------------------------------------------
+
+2016-02-22   NEILB
+	* Release 3.33_02
+    Hadn't noticed that the repo didn't have a MANIFEST file, so the tarball
+    didn't include most of the release!
+
+2016-02-21   NEILB
 	* Release 3.33_01
 	Added "use warnings" in every module. Added a few "no warnings 'once'"
     and "no warnings 'redefine'" to deal with some specific warnings.

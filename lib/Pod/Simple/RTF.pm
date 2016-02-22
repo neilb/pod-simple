@@ -9,7 +9,7 @@ use Pod::Simple::PullParser ();
 #sub Pod::Simple::DEBUG () {4};
 #sub Pod::Simple::PullParser::DEBUG () {4};
 
-our $VERSION = '3.33_01';
+our $VERSION = '3.33_02';
 our @ISA     = ('Pod::Simple::PullParser');
 our %Escape;
 

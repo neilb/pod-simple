@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Pod::Simple ();
 
-our $VERSION = '3.33_01';
+our $VERSION = '3.33_02';
 our @ISA     = ('Pod::Simple');
 
 # Yes, we could use named variables, but I want this to be impose

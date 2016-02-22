@@ -7,7 +7,7 @@ use Pod::Simple ();
 use Carp ();
 use Text::Wrap qw(wrap);
 
-our $VERSION = '3.33_01';
+our $VERSION = '3.33_02';
 our @ISA     = ('Pod::Simple');
 
 

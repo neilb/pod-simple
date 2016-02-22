@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Pod::Simple::Methody ();
 
-our $VERSION = '3.33_01';
+our $VERSION = '3.33_02';
 our @ISA     = ('Pod::Simple::Methody');
 our $HAS_HTML_ENTITIES;
 

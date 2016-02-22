@@ -4,7 +4,7 @@ require 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '3.33_01';
+our $VERSION = '3.33_02';
 
 sub import {
   my($value,$variable);

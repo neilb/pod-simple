@@ -9,7 +9,7 @@ use Pod::Simple::PullParserStartToken;
 use Pod::Simple::PullParserEndToken;
 use Pod::Simple::PullParserTextToken;
 
-our $VERSION = '3.33_01';
+our $VERSION = '3.33_02';
 our @ISA     = ('Pod::Simple');
 
 BEGIN { *DEBUG = \&Pod::Simple::DEBUG unless defined &DEBUG }

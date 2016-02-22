@@ -6,7 +6,7 @@ use warnings;
 use Carp ();
 use Pod::Simple ();
 
-our $VERSION = '3.33_01';
+our $VERSION = '3.33_02';
 our @ISA     = ('Pod::Simple');
 
 sub new {
