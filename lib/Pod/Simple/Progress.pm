@@ -4,7 +4,7 @@ require 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '3.33_02';
+our $VERSION = '3.33_03';
 
 # Objects of this class are used for noting progress of an
 #  operation every so often.  Messages delivered more often than that

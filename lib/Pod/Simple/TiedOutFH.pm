@@ -6,7 +6,7 @@ use warnings;
 use Symbol ('gensym');
 use Carp ();
 
-our $VERSION = '3.33_02';
+our $VERSION = '3.33_03';
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

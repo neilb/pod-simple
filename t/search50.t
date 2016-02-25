@@ -11,6 +11,8 @@ use strict;
 
 use Pod::Simple::Search;
 use Test::More;
+use Cwd qw/ abs_path /;
+
 BEGIN { plan 'no_plan' }
 
 # print "#  Test the scanning of the whole of \@INC ...\n";
@@ -75,7 +77,7 @@ while (my ($testmod, $testpath) = each %{ $name2where }) {
   # print "#        => \"$x[0]\" to \"$x[1]\"\n";
   is(
       File::Spec->rel2abs($x[0]),
-      $x[1],
+      abs_path($x[1]),
       " find('$testmod') should match survey's name2where{$testmod}"
   );
 }

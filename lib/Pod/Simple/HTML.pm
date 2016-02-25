@@ -6,7 +6,7 @@ use warnings;
 use Pod::Simple::PullParser ();
 
 our @ISA     = ('Pod::Simple::PullParser');
-our $VERSION = '3.33_02';
+our $VERSION = '3.33_03';
 
 BEGIN {
   if(defined &DEBUG) { } # no-op

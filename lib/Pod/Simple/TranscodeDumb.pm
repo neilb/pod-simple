@@ -5,7 +5,7 @@ require 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '3.33_02';
+our $VERSION = '3.33_03';
 # This module basically pretends it knows how to transcode, except
 #  only for null-transcodings!  We use this when Encode isn't
 #  available.

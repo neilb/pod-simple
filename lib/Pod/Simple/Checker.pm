@@ -15,7 +15,7 @@ BEGIN { *DEBUG = defined(&Pod::Simple::DEBUG)
           : sub() {0}
       }
 
-our $VERSION = '3.33_02';
+our $VERSION = '3.33_03';
 our @ISA     = ('Pod::Simple::Methody');
 
 use Text::Wrap 98.112902 (); # was 2001.0131, but I don't think we need that

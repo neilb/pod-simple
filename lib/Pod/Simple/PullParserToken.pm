@@ -6,7 +6,7 @@ use warnings;
 # Base class for tokens gotten from Pod::Simple::PullParser's $parser->get_token
 
 our @ISA     = ();
-our $VERSION = '3.33_02';
+our $VERSION = '3.33_03';
 
 sub new {  # Class->new('type', stuff...);  ## Overridden in derived classes anyway
   my $class = shift;

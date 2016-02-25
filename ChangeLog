@@ -1,6 +1,12 @@
  # ChangeLog for Pod::Simple dist
 #---------------------------------------------------------------------------
 
+2016-02-25   NEILB
+	* Release 3.33_03
+    Tests were failing on some systems (eg MacOSX) if the directory
+    where the CPAN client was running tests was symlinked.
+    Need to use Cwd::abs_path() to canonicalise paths.
+
 2016-02-22   NEILB
 	* Release 3.33_02
     Hadn't noticed that the repo didn't have a MANIFEST file, so the tarball

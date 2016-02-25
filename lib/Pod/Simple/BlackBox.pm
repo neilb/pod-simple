@@ -24,7 +24,7 @@ use strict;
 use warnings;
 use Carp ();
 
-our $VERSION = '3.33_02';
+our $VERSION = '3.33_03';
 
 #use constant DEBUG => 7;
 BEGIN {
